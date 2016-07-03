@@ -12,15 +12,14 @@ namespace LobNet.Clients.Client.Extensions
     {
         public static bool IsSuccessful(this IRestResponse response)
         {
-            return response.StatusCode.IsScuccessStatusCode()
+            return response.StatusCode.IsSuccessStatusCode()
                 && response.ResponseStatus == ResponseStatus.Completed;
         }
 
-        public static bool IsScuccessStatusCode(this HttpStatusCode responseCode)
+        public static bool IsSuccessStatusCode(this HttpStatusCode responseCode)
         {
             var numericResponse = (int)responseCode;
-            return numericResponse >= 200
-                && numericResponse <= 399;
+            return numericResponse >= 200 && numericResponse <= 399;
         }
     }
 }

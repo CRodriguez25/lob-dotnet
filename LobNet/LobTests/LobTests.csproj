@@ -59,11 +59,17 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AddressBookEntry.cs" />
+    <Compile Include="RequestExtensionTests.cs" />
+    <Compile Include="RoutesTests.cs" />
+    <Compile Include="ChecksTests.cs" />
     <Compile Include="BankAccountTests.cs" />
     <Compile Include="AreaMailTests.cs" />
     <Compile Include="BaseTest.cs" />
+    <Compile Include="PostCardsTests.cs" />
+    <Compile Include="LettersTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AddressTests.cs" />
+    <Compile Include="ResourcesTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LobNet\LobNet.csproj">
@@ -73,6 +79,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\lobCheckLogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\postcardback.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\postcardfront.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

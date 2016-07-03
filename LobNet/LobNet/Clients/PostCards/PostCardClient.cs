@@ -55,5 +55,22 @@ namespace LobNet.Clients.PostCards
             resource = ApplyGetOptions(resource, options);
             return Execute<GetResult<PostCard>>(resource, "GET");
         }
+
+        public GetResult<PostCard> GetPostCards()
+        {
+            return GetPostCards(new GetFilterOptions());
+        }
+
+        public Task<GetResult<PostCard>> GetPostCardsAsync(GetFilterOptions options)
+        {
+            var resource = Router.POSTCARDS;
+            resource = ApplyGetOptions(resource, options);
+            return ExecuteAsync<GetResult<PostCard>>(resource, "GET");
+        }
+
+        public Task<GetResult<PostCard>> GetPostCardsAsync()
+        {
+            return GetPostCardsAsync(new GetFilterOptions());
+        }
     }
 }

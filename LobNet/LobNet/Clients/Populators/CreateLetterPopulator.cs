@@ -22,11 +22,13 @@ namespace LobNet.Clients.Populators
             var fromPopulator = new TargetAddressPopulator(_letterDefinition.FromAddress, "from");
             var filePopulator = new LobImageFilePopulator(_letterDefinition.File, "file");
             var dataPopulator = new DataPopulator(_letterDefinition.Data);
+            var metadataPopulator = new MetaDataPopulator(_letterDefinition.MetaData);
 
             toPopulator.Populate(request);
             fromPopulator.Populate(request);
             filePopulator.Populate(request);
             dataPopulator.Populate(request);
+            metadataPopulator.Populate(request);
 
             request.AddParameter("color", _letterDefinition.Color);
             request.AddParameter("description", _letterDefinition.Description);
@@ -46,7 +48,7 @@ namespace LobNet.Clients.Populators
 
         private void PopulateExtraService(IRestRequest request)
         {
-            string extraService;
+            var extraService = "";
             switch (_letterDefinition.ExtraService)
             {
                 case ExtraService.None:
@@ -57,8 +59,6 @@ namespace LobNet.Clients.Populators
                 case ExtraService.Registered:
                     extraService = "registered";
                     break;
-                default:
-                    throw new ArgumentOutOfRangeException();
             }
 
             request.AddParameter("extra_service", extraService);
@@ -66,7 +66,7 @@ namespace LobNet.Clients.Populators
 
         private void PopulateAddressPlacement(IRestRequest request)
         {
-            string value;
+            var value = "";
             switch (_letterDefinition.AddressPlacement)
             {
                 case AddressPlacement.InsertBlankPage:
@@ -75,8 +75,6 @@ namespace LobNet.Clients.Populators
                 case AddressPlacement.TopFirstPage:
                     value = "top_first_page";
                     break;
-                default:
-                    throw new ArgumentOutOfRangeException();
             }
 
             request.AddParameter("address_placement", value);

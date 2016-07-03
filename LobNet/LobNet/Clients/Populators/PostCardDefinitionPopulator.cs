@@ -17,9 +17,9 @@ namespace LobNet.Clients.Populators
 
         public void Populate(IRestRequest request)
         {
-            PopulateAddress(_postCard.FromAddress, request, "from");
+            if(_postCard.FromAddress != null) PopulateAddress(_postCard.FromAddress, request, "from");
             PopulateAddress(_postCard.ToAddress, request, "to");
-            PopulateFileParameter(request, "front");
+            PopulateFileParameter(request, _postCard.Front, "front");
             PopulateBackParameter(request);
             if (_postCard.Data != null) PopulateData(request);
             if (_postCard.MetaData != null) PopulateMetaData(request);
@@ -44,8 +44,6 @@ namespace LobNet.Clients.Populators
                 case PostCardSize.SixByEleven:
                     request.AddParameter("size", "6x11");
                     break;
-                default:
-                    throw new ArgumentOutOfRangeException();
             }
         }
 
@@ -63,12 +61,12 @@ namespace LobNet.Clients.Populators
                 request.AddParameter("message", _postCard.Message);
                 return;
             }
-            PopulateFileParameter(request, "back");
+            PopulateFileParameter(request, _postCard.Back, "back");
         }
 
-        private void PopulateFileParameter(IRestRequest request, string name)
+        private void PopulateFileParameter(IRestRequest request, LobImageFile file, string name)
         {
-            var frontPopulator = new LobImageFilePopulator(_postCard.Front, name);
+            var frontPopulator = new LobImageFilePopulator(file, name);
             frontPopulator.Populate(request);
         }
 

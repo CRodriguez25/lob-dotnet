@@ -36,14 +36,21 @@ namespace LobNet.Clients.Client
             if (populator != null) populator.Populate(webRequest);
             _restClient.ExecuteAsync(webRequest, r =>
             {
-                CheckForErrors(r);
-                tcs.SetResult(JsonConvert.DeserializeObject<T>(r.Content));
+                try
+                {
+                    CheckForErrors(r);
+                    tcs.SetResult(JsonConvert.DeserializeObject<T>(r.Content));
+                }
+                catch (System.Exception e)
+                {
+                    tcs.SetException(e);
+                }
             });
 
             return tcs.Task;
         }
 
-        private void CheckForErrors(IRestResponse restResponse)
+        private static void CheckForErrors(IRestResponse restResponse)
         {
             if (restResponse.IsSuccessful()) return;
             var error = JsonConvert.DeserializeObject<ErrorResponse>(restResponse.Content);
@@ -137,16 +144,10 @@ namespace LobNet.Clients.Client
             {
                 case "POST": 
                     return Method.POST;
-                case "GET": 
-                    return Method.GET;
-                case "PUT": 
-                    return Method.PUT;
-                case "PATCH":
-                    return Method.PATCH;
                 case "DELETE":
                     return Method.DELETE;
                 default:
-                    throw new ArgumentException("Invalid HTTP Method");
+                    return Method.GET;
             }
         }
     }

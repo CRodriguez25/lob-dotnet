@@ -1,4 +1,6 @@
-﻿using LobNet.Clients.PostCards;
+﻿using System;
+using System.Collections.Generic;
+using LobNet.Clients.PostCards;
 using Newtonsoft.Json;
 
 namespace LobNet.Models
@@ -12,7 +14,7 @@ namespace LobNet.Models
         public string Description { get; set; }
 
         [JsonProperty("metadata")]
-        public dynamic MetaData { get; set; }
+        public Dictionary<string, string> MetaData { get; set; }
 
         [JsonProperty("to")]
         public AddressBookEntry ToAddress { get; set; }
@@ -33,15 +35,15 @@ namespace LobNet.Models
         public string Size { get; set; }
 
         [JsonProperty("date_created")]
-        public string DateCreated { get; set; }
+        public DateTime DateCreated { get; set; }
 
         [JsonProperty("date_modified")]
-        public string DateModified { get; set; }
+        public DateTime DateModified { get; set; }
 
         [JsonProperty("expected_delivery_date")]
-        public string ExpectedDeliveryDate { get; set; }
+        public DateTime ExpectedDeliveryDate { get; set; }
 
         [JsonProperty("thumbnails")]
-        public Thumbnails[] Thumbnails { get; set; }
+        public List<Thumbnails> Thumbnails { get; set; }
     }
 }

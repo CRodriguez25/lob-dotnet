@@ -32,6 +32,11 @@ namespace LobTests
                 { "key0", value0 }, { "key1", value1 }
             };
 
+            var data = new Dictionary<string, string>
+            {
+                {"datakey", "dataval"}
+            };
+
             var response = _areasClient.CreateAreaMailing(new AreaMailingDefinition
             {
                 Description = "area mail",
@@ -41,7 +46,8 @@ namespace LobTests
                 {
                     new ZipCodeRoute
                     {
-                        ZipCode = "94158"
+                        ZipCode = "94158",
+                        Route = "C002"
                     },
                     new ZipCodeRoute
                     {
@@ -49,7 +55,8 @@ namespace LobTests
                     }
                 },
                 TargetType = TargetType.All,
-                MetaData = metaData
+                MetaData = metaData,
+                Data = data
             });
 
             response.Description.Should().Be("area mail");
@@ -104,7 +111,7 @@ namespace LobTests
                         ZipCode = "60031"
                     }
                 },
-                TargetType = TargetType.All,
+                TargetType = TargetType.Residential,
                 MetaData = metaData
             });
 
@@ -115,7 +122,7 @@ namespace LobTests
             response.DateModified.Should().NotBe(DateTime.MinValue);
             response.Addresses.Should().BeGreaterThan(0);
             response.Price.Should().BeGreaterThan(0);
-            response.TargetType.Should().Be(TargetType.All);
+            response.TargetType.Should().Be(TargetType.Residential);
             response.Thumbnails.Should().NotBeEmpty();
             response.ZipCodes.Should().NotBeEmpty();
             response.MetaData["key0"].Should().Be(value0);

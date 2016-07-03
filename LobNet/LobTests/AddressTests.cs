@@ -109,12 +109,29 @@ namespace LobTests
             var metaDataResponse = _addressClient.GetAddressBookEntries(new GetFilterOptions
             {
                 Metadata = metaData,
-                Limit = 1
+                Limit = 1,
+                IncludeTotalCount = true,
+                GreaterThanOrEqualToDate = DateTime.Now.AddDays(-5),
+                LessThanDate = DateTime.Now.AddDays(5)
             }).Entries.First();
 
             metaDataResponse.Id.Should().Be(address.Id);
             var entry = _addressClient.RetrieveAddressBookEntry(metaDataResponse.Id);
             entry.Id.Should().Be(metaDataResponse.Id);
+
+            var addressToVerify = new Address
+            {
+                Address1 = "185 Berry Street",
+                Address2 = "Suite 1510",
+                City = "San Francisco",
+                State = "CA",
+                ZipCode = "94107",
+                Country = "US"
+            };
+
+
+            var verifyResponse = _addressClient.VerifyAddress(addressToVerify);
+            verifyResponse.Address.Address1.Should().NotBeNull();
         }
 
         [TestMethod]
@@ -159,12 +176,28 @@ namespace LobTests
             var metaDataResponse = (await _addressClient.GetAddressBookEntriesAsync(new GetFilterOptions
             {
                 Metadata = metaData,
-                Limit = 1
+                Limit = 1,
+                IncludeTotalCount = true,
+                GreaterThanDate = DateTime.Now.AddDays(-5),
+                LessThanOrEqualToDate = DateTime.Now.AddDays(5)
             })).Entries.First();
 
             metaDataResponse.Id.Should().Be(address.Id);
             var entry = await _addressClient.RetrieveAddressBookEntryAsync(metaDataResponse.Id);
             entry.Id.Should().Be(metaDataResponse.Id);
+
+            var addressToVerify = new Address
+            {
+                Address1 = "185 Berry Street",
+                Address2 = "Suite 1510",
+                City = "San Francisco",
+                State = "CA",
+                ZipCode = "94107",
+                Country = "US"
+            };
+
+            var verifyResponse = await _addressClient.VerifyAddressAsync(addressToVerify);
+            verifyResponse.Address.Address1.Should().NotBeNull();
         }
 
         [TestMethod]

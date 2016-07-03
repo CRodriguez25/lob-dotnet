@@ -6,7 +6,15 @@ using Newtonsoft.Json;
 
 namespace LobNet.Clients.Routes
 {
-    public class RoutesClient : LobClient
+    public interface IRoutesClient
+    {
+        ZipCodeRoutes GetRoutesForZipCode(ZipCodeRoute route);
+        Task<ZipCodeRoutes> GetRoutesForZipCodeAsync(ZipCodeRoute route);
+        IEnumerable<ZipCodeRoutes> GetRoutesForZipCodes(IEnumerable<ZipCodeRoute> filters);
+        Task<IEnumerable<ZipCodeRoutes>> GetRoutesForZipCodesAsync(IEnumerable<ZipCodeRoute> filters);
+    }
+
+    public class RoutesClient : LobClient, IRoutesClient
     {
         public RoutesClient(string apiKey) : base(apiKey)
         {

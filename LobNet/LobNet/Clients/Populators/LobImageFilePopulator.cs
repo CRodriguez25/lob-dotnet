@@ -1,4 +1,5 @@
-﻿using LobNet.Clients.PostCards;
+﻿using System.IO;
+using LobNet.Clients.PostCards;
 using LobNet.Models;
 using RestSharp;
 
@@ -19,7 +20,14 @@ namespace LobNet.Clients.Populators
         {
             if (_file.IsLocalPath)
             {
-                request.AddFile(_name, _file.File);
+                request.AlwaysMultipartFormData = true;
+                using (var fs = File.Open(_file.File, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                {
+                    var fileName = Path.GetFileName(_file.File);
+                    var buffer = new byte[fs.Length];
+                    fs.Read(buffer, 0, (int)fs.Length);
+                    request.AddFileBytes(_name, buffer, "logo", fileName);
+                }
             }
             else
             {

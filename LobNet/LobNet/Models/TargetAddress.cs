@@ -25,17 +25,5 @@ namespace LobNet.Models
         {
             Id = id;
         }
-
-        public void SetId(string id)
-        {
-            Id = id;
-            Address = null;
-        }
-
-        public void SetAddress(Address address)
-        {
-            Address = address;
-            Id = null;
-        }
     }
 }

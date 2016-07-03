@@ -149,7 +149,7 @@ namespace LobTests
             {
                 AccountNumber = "123456789",
                 RoutingNumber = "122100024",
-                AccountType = AccountType.Company,
+                AccountType = AccountType.Individual,
                 Signatory = "John Doe",
                 Description = "Bank Account",
                 MetaData = metaData
@@ -158,7 +158,7 @@ namespace LobTests
             bankAccount.Description.Should().Be("Bank Account");
             bankAccount.Verified.Should().BeFalse();
             bankAccount.AccountNumber.Should().Be("123456789");
-            bankAccount.AccountType.Should().Be(AccountType.Company);
+            bankAccount.AccountType.Should().Be(AccountType.Individual);
             bankAccount.RoutingNumber.Should().Be("122100024");
             bankAccount.Signatory.Should().Be("John Doe");
             bankAccount.MetaData["key0"].Should().Be(value0);

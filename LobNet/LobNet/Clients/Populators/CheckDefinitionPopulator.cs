@@ -51,7 +51,7 @@ namespace LobNet.Clients.Populators
 
         private void PopulateMailType(IRestRequest request)
         {
-            string mailTypeVal;
+            var mailTypeVal = "";
             switch (_checkDefinition.MailType)
             {
                 case MailType.USPSFirstClass:
@@ -60,17 +60,15 @@ namespace LobNet.Clients.Populators
                 case MailType.UPSNextDayAir:
                     mailTypeVal = "ups_next_day_air";
                     break;
-                default:
-                    throw new ArgumentOutOfRangeException();
             }
 
             request.AddParameter("mail_type", mailTypeVal);
         }
 
-        private void PopulateImage(LobImageFile image, IRestRequest request, string name)
+        private static void PopulateImage(LobImageFile image, IRestRequest request, string name)
         {
             if (image != null)
-                new LobImageFilePopulator(_checkDefinition.Logo, name).Populate(request);
+                new LobImageFilePopulator(image, name).Populate(request);
         }
 
         private void PopulateCheckBottom(IRestRequest request)

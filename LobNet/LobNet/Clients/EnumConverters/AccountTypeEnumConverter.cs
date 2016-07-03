@@ -8,20 +8,6 @@ namespace LobNet.Clients.EnumConverters
 {
     internal class AccountTypeEnumConverter : StringEnumConverter
     {
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
-        {
-            if (value.Equals(AccountType.Company))
-            {
-                value = "company";
-            }
-            else if (value.Equals(AccountType.Individual))
-            {
-                value = "individual";
-            }
-
-            base.WriteJson(writer, value, serializer);
-        }
-
         public override object ReadJson(JsonReader reader, Type objectType,
             object existingValue, JsonSerializer serializer)
         {
@@ -31,8 +17,6 @@ namespace LobNet.Clients.EnumConverters
             {
                 case "company":
                     return AccountType.Company;
-                case "individual":
-                    return AccountType.Individual;
                 default:
                     return AccountType.Individual;
             }

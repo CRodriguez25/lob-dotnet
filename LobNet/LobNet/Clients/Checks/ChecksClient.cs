@@ -51,5 +51,15 @@ namespace LobNet.Clients.Checks
             resource = ApplyGetOptions(resource, options);
             return ExecuteAsync<GetResult<Check>>(resource, "GET");
         }
+
+        public GetResult<Check> GetChecks()
+        {
+            return GetChecks(new GetFilterOptions());
+        }
+
+        public Task<GetResult<Check>> GetChecksAsync()
+        {
+            return GetChecksAsync(new GetFilterOptions());
+        }
     }
 }

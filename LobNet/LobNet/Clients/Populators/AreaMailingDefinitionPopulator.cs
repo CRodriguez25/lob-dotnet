@@ -25,7 +25,7 @@ namespace LobNet.Clients.Populators
 
         private void PopulateTargetType(IRestRequest request)
         {
-            string value;
+            var value = "";
             switch (_definition.TargetType)
             {
                 case TargetType.All:
@@ -34,8 +34,6 @@ namespace LobNet.Clients.Populators
                 case TargetType.Residential:
                     value = "residential";
                     break;
-                default:
-                    throw new ArgumentOutOfRangeException();
             }
 
             request.AddParameter("target_type", value);

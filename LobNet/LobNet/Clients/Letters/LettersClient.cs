@@ -61,5 +61,15 @@ namespace LobNet.Clients.Letters
             resource = ApplyGetOptions(resource, options);
             return ExecuteAsync<GetResult<Letter>>(resource, "GET");
         }
+
+        public GetResult<Letter> GetLetters()
+        {
+            return GetLetters(new GetFilterOptions());
+        }
+
+        public Task<GetResult<Letter>> GetLettersAsync()
+        {
+            return GetLettersAsync(new GetFilterOptions());
+        }
     }
 }

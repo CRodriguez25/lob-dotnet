@@ -8,6 +8,6 @@ namespace LobTests
 {
     public class BaseTest
     {
-        protected string _key = "test_7b1960d06d6dfe28d3862b98380b8b0dc93";
+        protected string _key = "test_24956c767d386585c47e9249d31bb38c574";
     }
 }

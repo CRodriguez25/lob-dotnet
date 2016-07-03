@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using LobNet.Clients.EnumConverters;
 using Newtonsoft.Json;
@@ -35,14 +36,15 @@ namespace LobNet.Models
         public bool Verified { get; set; }
 
         [JsonProperty("date_created")]
-        public string DateCreated { get; set; }
+        public DateTime DateCreated { get; set; }
 
         [JsonProperty("date_modified")]
-        public string DateModified { get; set; }
+        public DateTime DateModified { get; set; }
 
         [JsonProperty("deleted")]
         public bool Deleted { get; set; }
     }
+
     public enum AccountType
     {
         Individual,

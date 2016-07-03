@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using LobNet.Clients.EnumConverters;
 using LobNet.Clients.PostCards;
 using Newtonsoft.Json;
@@ -46,16 +48,19 @@ namespace LobNet.Models
         public TrackingInformation Tracking { get; set; }
 
         [JsonProperty("thumbnails")]
-        public Thumbnails[] Thumbnails { get; set; }
+        public List<Thumbnails> Thumbnails { get; set; }
 
         [JsonProperty("date_created")]
-        public string DateCreated { get; set; }
+        public DateTime DateCreated { get; set; }
 
         [JsonProperty("date_modified")]
-        public string DateModified { get; set; }
+        public DateTime DateModified { get; set; }
 
         [JsonProperty("expected_delivery_date")]
-        public string ExpectedDeliveryDate { get; set; }
+        public DateTime ExpectedDeliveryDate { get; set; }
+
+        [JsonProperty("metadata")]
+        public Dictionary<string, string> MetaData { get; set; }
 
     }
     public enum ExtraService
