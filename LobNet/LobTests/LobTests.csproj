@@ -59,6 +59,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AddressBookEntry.cs" />
+    <Compile Include="BankAccountTests.cs" />
     <Compile Include="AreaMailTests.cs" />
     <Compile Include="BaseTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

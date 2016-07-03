@@ -39,6 +39,9 @@ namespace LobNet.Models
 
         [JsonProperty("date_modified")]
         public string DateModified { get; set; }
+
+        [JsonProperty("deleted")]
+        public bool Deleted { get; set; }
     }
     public enum AccountType
     {

@@ -60,10 +60,20 @@ namespace LobNet.Clients.Areas
             return Execute<GetResult<Area>>(resource, "GET");
         }
 
+        public GetResult<Area> GetAreaMailings()
+        {
+            return GetAreaMailings(new GetFilterOptions());
+        }
+
         public Task<GetResult<Area>> GetAreaMailingsAsync(GetFilterOptions options)
         {
             var resource = ApplyGetOptions(Router.AREAS, options);
             return ExecuteAsync<GetResult<Area>>(resource, "GET");
+        }
+
+        public Task<GetResult<Area>> GetAreaMailingsAsync()
+        {
+            return GetAreaMailingsAsync(new GetFilterOptions());
         }
     }
 

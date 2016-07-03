@@ -13,3 +13,18 @@ C:\Users\Carlos\Documents\Visual Studio 2013\Projects\LobNet\LobNet\obj\Debug\Lo
 C:\Users\Carlos\Documents\Visual Studio 2013\Projects\LobNet\LobNet\obj\Debug\LobNet.csprojResolveAssemblyReference.cache
 C:\Users\Carlos\Documents\Visual Studio 2013\Projects\LobNet\LobNet\obj\Debug\LobNet.dll
 C:\Users\Carlos\Documents\Visual Studio 2013\Projects\LobNet\LobNet\obj\Debug\LobNet.pdb
+C:\Users\Carlos\Documents\lob-dotnet\LobNet\LobNet\bin\Debug\LobNet.dll.config
+C:\Users\Carlos\Documents\lob-dotnet\LobNet\LobNet\bin\Debug\LobNet.dll
+C:\Users\Carlos\Documents\lob-dotnet\LobNet\LobNet\bin\Debug\LobNet.pdb
+C:\Users\Carlos\Documents\lob-dotnet\LobNet\LobNet\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Carlos\Documents\lob-dotnet\LobNet\LobNet\bin\Debug\RestSharp.dll
+C:\Users\Carlos\Documents\lob-dotnet\LobNet\LobNet\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Carlos\Documents\lob-dotnet\LobNet\LobNet\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Carlos\Documents\lob-dotnet\LobNet\LobNet\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Carlos\Documents\lob-dotnet\LobNet\LobNet\bin\Debug\RestSharp.xml
+C:\Users\Carlos\Documents\lob-dotnet\LobNet\LobNet\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Carlos\Documents\lob-dotnet\LobNet\LobNet\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Carlos\Documents\lob-dotnet\LobNet\LobNet\obj\Debug\LobNet.csproj.App.config
+C:\Users\Carlos\Documents\lob-dotnet\LobNet\LobNet\obj\Debug\LobNet.csprojResolveAssemblyReference.cache
+C:\Users\Carlos\Documents\lob-dotnet\LobNet\LobNet\obj\Debug\LobNet.dll
+C:\Users\Carlos\Documents\lob-dotnet\LobNet\LobNet\obj\Debug\LobNet.pdb

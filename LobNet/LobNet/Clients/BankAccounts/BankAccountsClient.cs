@@ -92,5 +92,15 @@ namespace LobNet.Clients.BankAccounts
             var path = ApplyGetOptions(_resource, options);
             return ExecuteAsync<GetResult<BankAccount>>(path, "GET");
         }
+
+        public GetResult<BankAccount> GetBankAccounts()
+        {
+            return GetBankAccounts(new GetFilterOptions());
+        }
+
+        public Task<GetResult<BankAccount>> GetBankAccountsAsync()
+        {
+            return GetBankAccountsAsync(new GetFilterOptions());
+        }
     }
 }

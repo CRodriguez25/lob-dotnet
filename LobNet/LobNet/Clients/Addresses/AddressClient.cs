@@ -74,6 +74,17 @@ namespace LobNet.Clients.Addresses
             return ExecuteAsync<GetResult<AddressBookEntry>>(resource, "GET");
         }
 
+
+        public GetResult<AddressBookEntry> GetAddressBookEntries()
+        {
+            return GetAddressBookEntries(new GetFilterOptions());
+        }
+
+        public Task<GetResult<AddressBookEntry>> GetAddressBookEntriesAsync()
+        {
+            return GetAddressBookEntriesAsync(new GetFilterOptions());
+        }
+
         #endregion
 
         #region Delete Address
@@ -108,5 +119,7 @@ namespace LobNet.Clients.Addresses
         }
 
         #endregion
+
+
     }
 }
