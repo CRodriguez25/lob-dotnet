@@ -22,8 +22,8 @@ namespace LobNet.Clients.Populators
         public void Populate(IRestRequest request)
         {
             if (_address.Name != null) request.AddParameter(Wrap("name"), _address.Name);
-            if (_address.Address1 != null) request.AddParameter(Wrap("address_line1"), _address.Address1);
-            if (_address.Address2 != null) request.AddParameter(Wrap("address_line2"), _address.Address2);
+            if (_address.Line1 != null) request.AddParameter(Wrap("address_line1"), _address.Line1);
+            if (_address.Line2 != null) request.AddParameter(Wrap("address_line2"), _address.Line2);
             if (_address.City != null) request.AddParameter(Wrap("address_city"), _address.City);
             if (_address.State != null) request.AddParameter(Wrap("address_state"), _address.State);
             if (_address.ZipCode != null) request.AddParameter(Wrap("address_zip"), _address.ZipCode);

@@ -129,7 +129,6 @@ namespace LobTests
                 Country = "US"
             };
 
-
             var verifyResponse = _addressClient.VerifyAddress(addressToVerify);
             verifyResponse.Address.Address1.Should().NotBeNull();
         }

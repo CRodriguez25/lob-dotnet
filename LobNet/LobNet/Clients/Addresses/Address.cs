@@ -8,10 +8,10 @@ namespace LobNet.Clients.Addresses
         public string Name { get; set; }
 
         [JsonProperty("address_line1")]
-        public string Address1 { get; set; }
+        public string Line1 { get; set; }
 
         [JsonProperty("address_line2")]
-        public string Address2 { get; set; }
+        public string Line2 { get; set; }
 
         [JsonProperty("address_city")]
         public string City { get; set; }
