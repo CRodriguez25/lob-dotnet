@@ -7,8 +7,8 @@ namespace LobNet.Clients.Checks
     public class CheckDefinition
     {
         public string Description { get; set; }
-        public TargetAddress ToAddress { get; set; }
-        public TargetAddress FromAddress { get; set; }
+        public Location ToAddress { get; set; }
+        public Location FromAddress { get; set; }
         public string BankAccountId { get; set; }
         public decimal Amount { get; set; }
         public string Memo { get; set; }

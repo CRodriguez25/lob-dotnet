@@ -141,8 +141,8 @@ namespace LobTests
             {
                 BankAccountId = bankAccount.Id,
                 Description = "check",
-                ToAddress = new TargetAddress(address.Id),
-                FromAddress = new TargetAddress(address.Id),
+                ToAddress = new Location(address.Id),
+                FromAddress = new Location(address.Id),
                 Amount = 1000,
                 Message = "test message",
                 CheckNumber = 100,
@@ -198,8 +198,8 @@ namespace LobTests
             {
                 BankAccountId = bankAccount.Id,
                 Description = "check",
-                ToAddress = new TargetAddress(address.Id),
-                FromAddress = new TargetAddress(address.Id),
+                ToAddress = new Location(address.Id),
+                FromAddress = new Location(address.Id),
                 Amount = 1000,
                 Message = "test message",
                 CheckNumber = 100,

@@ -70,7 +70,7 @@ namespace LobNet.Clients.Populators
             frontPopulator.Populate(request);
         }
 
-        private static void PopulateAddress(TargetAddress address, IRestRequest request, string type)
+        private static void PopulateAddress(Location address, IRestRequest request, string type)
         {
             var populator = new TargetAddressPopulator(address, type);
             populator.Populate(request);

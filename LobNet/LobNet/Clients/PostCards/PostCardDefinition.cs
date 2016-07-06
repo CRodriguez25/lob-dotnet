@@ -5,8 +5,8 @@ namespace LobNet.Clients.PostCards
 {
     public class PostCardDefinition
     {
-        public TargetAddress ToAddress { get; set; }
-        public TargetAddress FromAddress { get; set; }
+        public Location ToAddress { get; set; }
+        public Location FromAddress { get; set; }
         public LobImageFile Front { get; set; }
         public LobImageFile Back { get; set; }
         public string Message { get; set; }

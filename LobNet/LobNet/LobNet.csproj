@@ -95,7 +95,7 @@
     <Compile Include="Clients\Populators\PostCardDefinitionPopulator.cs" />
     <Compile Include="Models\LobImageFile.cs" />
     <Compile Include="Models\PostCard.cs" />
-    <Compile Include="Models\TargetAddress.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Clients\PostCards\PostCardClient.cs" />
     <Compile Include="Clients\PostCards\PostCardDefinition.cs" />
     <Compile Include="Models\Thumbnails.cs" />

@@ -116,8 +116,8 @@ namespace LobTests
             var postCard = _client.CreatePostCard(new PostCardDefinition
             {
                 Description = "postcard",
-                ToAddress = new TargetAddress(address.Id),
-                FromAddress = new TargetAddress(address.Id),
+                ToAddress = new Location(address.Id),
+                FromAddress = new Location(address.Id),
                 Front = new LobImageFile("<div>Test</div>", false),
                 Back = new LobImageFile("<div>Back</div>", false),
                 PostCardSize = PostCardSize.SixByEleven,
@@ -166,8 +166,8 @@ namespace LobTests
             var postCard = await _client.CreatePostCardAsync(new PostCardDefinition
             {
                 Description = "postcard",
-                ToAddress = new TargetAddress(address.Id),
-                FromAddress = new TargetAddress(address.Id),
+                ToAddress = new Location(address.Id),
+                FromAddress = new Location(address.Id),
                 Front = new LobImageFile("<div>Test</div>", false),
                 Back = new LobImageFile("<div>Back</div>", false),
                 PostCardSize = PostCardSize.SixByEleven,
@@ -201,7 +201,7 @@ namespace LobTests
             Setup();
             var postCard = _client.CreatePostCard(new PostCardDefinition
             {
-                ToAddress = new TargetAddress(new Address
+                ToAddress = new Location(new Address
                 {
                     Line1 = "185 Berry Street",
                     Line2 = "Suite 1510",
@@ -211,7 +211,7 @@ namespace LobTests
                     Country = "US",
                     Name = "Lob0"
                 }),
-                FromAddress = new TargetAddress(new Address
+                FromAddress = new Location(new Address
                 {
                     Line1 = "185 Berry Street",
                     Line2 = "Suite 1510",
@@ -235,7 +235,7 @@ namespace LobTests
             Setup();
             var postCard = await _client.CreatePostCardAsync(new PostCardDefinition
             {
-                ToAddress = new TargetAddress(new Address
+                ToAddress = new Location(new Address
                 {
                     Line1 = "185 Berry Street",
                     Line2 = "Suite 1510",
@@ -245,7 +245,7 @@ namespace LobTests
                     Country = "US",
                     Name = "Lob0"
                 }),
-                FromAddress = new TargetAddress(new Address
+                FromAddress = new Location(new Address
                 {
                     Line1 = "185 Berry Street",
                     Line2 = "Suite 1510",
@@ -269,7 +269,7 @@ namespace LobTests
             Setup();
             var postCard = _client.CreatePostCard(new PostCardDefinition
             {
-                ToAddress = new TargetAddress(new Address
+                ToAddress = new Location(new Address
                 {
                     Line1 = "185 Berry Street",
                     Line2 = "Suite 1510",
@@ -293,7 +293,7 @@ namespace LobTests
             Setup();
             var postCard = await _client.CreatePostCardAsync(new PostCardDefinition
             {
-                ToAddress = new TargetAddress(new Address
+                ToAddress = new Location(new Address
                 {
                     Line1 = "185 Berry Street",
                     Line2 = "Suite 1510",

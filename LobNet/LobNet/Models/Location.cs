@@ -2,9 +2,9 @@ using LobNet.Clients.Addresses;
 
 namespace LobNet.Models
 {
-    public class TargetAddress
+    public class Location
     {
-        public string Id { get; private set; }
+        public string AddressId { get; private set; }
         public Address Address { get; private set; }
 
         /// <summary>
@@ -12,7 +12,7 @@ namespace LobNet.Models
         /// added to address book.
         /// </summary>
         /// <param name="address">The address</param>
-        public TargetAddress(Address address)
+        public Location(Address address)
         {
             Address = address;
         }
@@ -20,10 +20,10 @@ namespace LobNet.Models
         /// <summary>
         /// Constructor that takes in ID of existing entry in address book. 
         /// </summary>
-        /// <param name="id">ID of existing address book entry</param>
-        public TargetAddress(string id)
+        /// <param name="addressId">ID of existing address book entry</param>
+        public Location(string addressId)
         {
-            Id = id;
+            AddressId = addressId;
         }
     }
 }

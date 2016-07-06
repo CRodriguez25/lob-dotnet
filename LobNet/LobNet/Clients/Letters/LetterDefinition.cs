@@ -6,9 +6,9 @@ namespace LobNet.Clients.Letters
 {
     public class LetterDefinition
     {
-        public TargetAddress ToAddress { get; set; }
+        public Location ToAddress { get; set; }
 
-        public TargetAddress FromAddress { get; set; }
+        public Location FromAddress { get; set; }
         public string Description { get; set; }
         public bool Color { get; set; }
         public LobImageFile File { get; set; }

@@ -6,10 +6,10 @@ namespace LobNet.Clients.Populators
 {
     public class TargetAddressPopulator : IRequestPopulator
     {
-        private readonly TargetAddress _target;
+        private readonly Location _target;
         private readonly string _type;
 
-        public TargetAddressPopulator(TargetAddress target, string type)
+        public TargetAddressPopulator(Location target, string type)
         {
             _target = target;
             _type = type;
@@ -17,9 +17,9 @@ namespace LobNet.Clients.Populators
 
         public void Populate(IRestRequest request)
         {
-            if (_target.Id != null)
+            if (_target.AddressId != null)
             {
-                request.AddParameter(_type, _target.Id);
+                request.AddParameter(_type, _target.AddressId);
             }
             else
             {

@@ -94,8 +94,8 @@ namespace LobTests
             const string file = "<div>Test HTML</div>";
             var letter = _client.CreateLetter(new LetterDefinition
             {
-                ToAddress = new TargetAddress(address.Id),
-                FromAddress = new TargetAddress(address.Id),
+                ToAddress = new Location(address.Id),
+                FromAddress = new Location(address.Id),
                 Description = "letter",
                 File = new LobImageFile(file, false),
                 Data = data,
@@ -150,8 +150,8 @@ namespace LobTests
             const string file = "<div>Test HTML</div>";
             var letter = await _client.CreateLetterAsync(new LetterDefinition
             {
-                ToAddress = new TargetAddress(address.Id),
-                FromAddress = new TargetAddress(address.Id),
+                ToAddress = new Location(address.Id),
+                FromAddress = new Location(address.Id),
                 Description = "letter",
                 File = new LobImageFile(file, false),
                 Data = data,
@@ -204,8 +204,8 @@ namespace LobTests
                 DoubleSided = false,
                 ReturnEnvelope = new ReturnEnvelope(perforatedPage),
                 Description = "letter",
-                ToAddress = new TargetAddress(address.Id),
-                FromAddress = new TargetAddress(address.Id),
+                ToAddress = new Location(address.Id),
+                FromAddress = new Location(address.Id),
                 File = new LobImageFile(file, false),
                 Color = true,
                 ExtraService = ExtraService.Certified
@@ -232,8 +232,8 @@ namespace LobTests
                 DoubleSided = false,
                 ReturnEnvelope = new ReturnEnvelope(perforatedPage),
                 Description = "letter",
-                ToAddress = new TargetAddress(address.Id),
-                FromAddress = new TargetAddress(address.Id),
+                ToAddress = new Location(address.Id),
+                FromAddress = new Location(address.Id),
                 File = new LobImageFile(file, false),
                 Color = true,
                 ExtraService = ExtraService.Certified
@@ -261,8 +261,8 @@ namespace LobTests
                 DoubleSided = false,
                 ReturnEnvelope = new ReturnEnvelope(perforatedPage),
                 Description = "letter",
-                ToAddress = new TargetAddress(address.Id),
-                FromAddress = new TargetAddress(address.Id),
+                ToAddress = new Location(address.Id),
+                FromAddress = new Location(address.Id),
                 File = new LobImageFile(file, false),
                 Color = true
             });
@@ -289,8 +289,8 @@ namespace LobTests
                 DoubleSided = false,
                 ReturnEnvelope = new ReturnEnvelope(perforatedPage),
                 Description = "letter",
-                ToAddress = new TargetAddress(address.Id),
-                FromAddress = new TargetAddress(address.Id),
+                ToAddress = new Location(address.Id),
+                FromAddress = new Location(address.Id),
                 File = new LobImageFile(file, false),
                 Color = true
             });
