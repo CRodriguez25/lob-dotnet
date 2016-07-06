@@ -80,8 +80,8 @@ namespace LobTests
             };
             var address = _addressClient.CreateAddressBookEntry(new Address
             {
-                Address1 = "185 Berry Street",
-                Address2 = "Suite 1510",
+                Line1 = "185 Berry Street",
+                Line2 = "Suite 1510",
                 City = "San Francisco",
                 State = "CA",
                 ZipCode = "94107",
@@ -121,8 +121,8 @@ namespace LobTests
 
             var addressToVerify = new Address
             {
-                Address1 = "185 Berry Street",
-                Address2 = "Suite 1510",
+                Line1 = "185 Berry Street",
+                Line2 = "Suite 1510",
                 City = "San Francisco",
                 State = "CA",
                 ZipCode = "94107",
@@ -130,7 +130,7 @@ namespace LobTests
             };
 
             var verifyResponse = _addressClient.VerifyAddress(addressToVerify);
-            verifyResponse.Address.Address1.Should().NotBeNull();
+            verifyResponse.Address.Line1.Should().NotBeNull();
         }
 
         [TestMethod]
@@ -146,8 +146,8 @@ namespace LobTests
             };
             var address = await _addressClient.CreateAddressBookEntryAsync(new Address
             {
-                Address1 = "185 Berry Street",
-                Address2 = "Suite 1510",
+                Line1 = "185 Berry Street",
+                Line2 = "Suite 1510",
                 City = "San Francisco",
                 State = "CA",
                 ZipCode = "94107",
@@ -187,8 +187,8 @@ namespace LobTests
 
             var addressToVerify = new Address
             {
-                Address1 = "185 Berry Street",
-                Address2 = "Suite 1510",
+                Line1 = "185 Berry Street",
+                Line2 = "Suite 1510",
                 City = "San Francisco",
                 State = "CA",
                 ZipCode = "94107",
@@ -196,7 +196,7 @@ namespace LobTests
             };
 
             var verifyResponse = await _addressClient.VerifyAddressAsync(addressToVerify);
-            verifyResponse.Address.Address1.Should().NotBeNull();
+            verifyResponse.Address.Line1.Should().NotBeNull();
         }
 
         [TestMethod]

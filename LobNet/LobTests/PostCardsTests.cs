@@ -203,8 +203,8 @@ namespace LobTests
             {
                 ToAddress = new TargetAddress(new Address
                 {
-                    Address1 = "185 Berry Street",
-                    Address2 = "Suite 1510",
+                    Line1 = "185 Berry Street",
+                    Line2 = "Suite 1510",
                     City = "San Francisco",
                     State = "CA",
                     ZipCode = "94107",
@@ -213,8 +213,8 @@ namespace LobTests
                 }),
                 FromAddress = new TargetAddress(new Address
                 {
-                    Address1 = "185 Berry Street",
-                    Address2 = "Suite 1510",
+                    Line1 = "185 Berry Street",
+                    Line2 = "Suite 1510",
                     City = "San Francisco",
                     State = "CA",
                     ZipCode = "94107",
@@ -237,8 +237,8 @@ namespace LobTests
             {
                 ToAddress = new TargetAddress(new Address
                 {
-                    Address1 = "185 Berry Street",
-                    Address2 = "Suite 1510",
+                    Line1 = "185 Berry Street",
+                    Line2 = "Suite 1510",
                     City = "San Francisco",
                     State = "CA",
                     ZipCode = "94107",
@@ -247,8 +247,8 @@ namespace LobTests
                 }),
                 FromAddress = new TargetAddress(new Address
                 {
-                    Address1 = "185 Berry Street",
-                    Address2 = "Suite 1510",
+                    Line1 = "185 Berry Street",
+                    Line2 = "Suite 1510",
                     City = "San Francisco",
                     State = "CA",
                     ZipCode = "94107",
@@ -271,8 +271,8 @@ namespace LobTests
             {
                 ToAddress = new TargetAddress(new Address
                 {
-                    Address1 = "185 Berry Street",
-                    Address2 = "Suite 1510",
+                    Line1 = "185 Berry Street",
+                    Line2 = "Suite 1510",
                     City = "San Francisco",
                     State = "CA",
                     ZipCode = "94107",
@@ -295,8 +295,8 @@ namespace LobTests
             {
                 ToAddress = new TargetAddress(new Address
                 {
-                    Address1 = "185 Berry Street",
-                    Address2 = "Suite 1510",
+                    Line1 = "185 Berry Street",
+                    Line2 = "Suite 1510",
                     City = "San Francisco",
                     State = "CA",
                     ZipCode = "94107",
